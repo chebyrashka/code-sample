@@ -1,0 +1,305 @@
+#screen-search-results
+{
+	background: $background-new;
+
+	.search-query
+	{
+		min-height: 1.4em;
+		font-size: 140%;
+		font-weight: bold;
+		text-transform: uppercase;
+		
+		//wrap the word
+		word-wrap: break-word;
+		overflow-wrap: break-word;
+	}
+
+	.num-results
+	{
+		min-height: 0.8em;
+		font-size: 80%;
+
+		margin-top: 0.2rem;
+	}
+	
+	> h1
+	{
+		padding-top: 0.5em;
+		padding-bottom: 0.5em;
+		padding-left: 1rem;
+	
+		text-transform: uppercase;
+		margin-left: 11rem;
+	}
+
+	> nav
+	{
+		background: white;
+
+		float: left;
+		width: 22rem;
+		
+		padding: 2em 0;
+
+
+		> header
+		{
+			border-bottom: 1px solid rgba(0,0,0,0.1);
+			margin: 0 1.75em;
+			margin-bottom: 0.75em;
+			padding-bottom: 0.75em;
+			padding-left: 1.9em;
+		}
+
+		> section
+		{
+			display: block;
+			margin: 0;
+
+			margin-bottom: 1.5em;
+			margin-right: 1.75em;
+
+			border-left: 0.5em solid white;
+
+			padding-left: 3rem;
+			
+			label
+			{
+				display: none;
+
+				font-size: 85%;
+				margin-bottom: 0.1em;
+				padding: 0 0.25rem;
+				
+				color: #333;
+			}
+			
+			> h5
+			{
+				display: none;
+
+				color: #999;
+				font-weight: bold;
+
+				font-size: 80%;
+				padding: 0.25rem;
+
+				text-transform: uppercase;
+				
+				margin-top: 0.75em;
+				
+				&:first-of-type
+				{
+					margin-top: 0;
+				}
+			}
+			
+			> header
+			{
+				padding-left: 0.25rem;
+				
+				margin-bottom: 0.25em;
+				
+				span
+				{
+					font-size: 110%;
+					font-weight: bold;
+				}
+
+				select
+				{
+					visibility: hidden;
+					
+					float: right;
+					font-size: 90%;
+					padding: 0.2em;
+				}
+
+				.icon
+				{
+					width: 1.25em;
+					height: 1.25em;
+					
+					margin-left: -2em;
+				}
+
+				small
+				{
+					opacity: 0.75;
+					font-weight: normal;
+					margin-left: 0.3em;
+
+					&:before
+					{
+						display: inline-block;
+						content: '(';
+					}
+
+					&:after
+					{
+						display: inline-block;
+						content: ')';
+					}
+				}
+			}
+
+			&:hover
+			{
+				border-left: 0.5em solid #5a9ebe;
+			}
+
+			&.active
+			{
+				border-left: 0.5em solid #5a9ebe;
+
+				> header select
+				{
+					visibility: visible;
+				}
+
+				> h5 { display: block; }
+				> label { display: block; }
+			}
+
+			&.owners > header .icon { color: #5a9ebe; }
+			&.locations > header .icon { color: #e0574c; }
+			&.lenders > header .icon { color: #493548; }
+			&.campaigns > header .icon { color: #ff7f00; }
+			&.agents > header .icon { color: #705d56; }
+			&.offices > header .icon { color: #6b8d02; }
+		}
+	}
+	
+
+	> .searching, .no-results, .error
+	{
+		margin-left: 22rem;
+
+		padding-top: 1.6em;
+		padding-left: 2em;
+		
+		
+		display: none;
+		
+		> h1
+		{
+			//TODO
+		}
+	}
+	
+	&.no-results > .no-results
+	{
+		display: block;
+	}
+	
+	&.searching > .searching
+	{
+		display: block;
+	}
+	
+	&.error > .error
+	{
+		display: block;
+	}
+	
+	
+	> .results
+	{
+		margin-left: 22rem;
+
+		padding-top: 1em;
+		padding-left: 1em;
+
+/*
+		column-count: 2;
+		column-gap: 0;
+*/		
+		&:empty
+		{
+			display: none;
+		}
+		
+		> li
+		{
+			width: calc(50% - 1em);
+			float: left;
+
+			background: white;
+			//box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+			margin-bottom: 1em;
+			margin-right: 1em;
+			
+			break-inside: avoid;
+			
+			position: relative;
+			
+			&:hover
+			{
+				background: #f8f8f8;
+			}
+			
+			> a
+			{
+				overflow: hidden;
+				display: block;
+
+				padding: 2em 2.5em;
+				align-items: center;
+				
+				height: 8.5em;
+				
+				
+				button.track
+				{
+					position: absolute;
+					top: 1em;
+					right: 1em;
+
+					.icon
+					{
+						width: 1.25em;
+						height: 1.25em;
+					}
+				}
+
+				> .icon
+				{
+					position: absolute;
+					top: 2.25em;
+					left: 1em;
+				}
+
+				> h3
+				{
+					font-size: 125%;
+					margin-bottom: 0.5em;
+				}
+
+				address
+				{
+					font-size: 90%;
+					opacity: 0.5;
+				}
+
+				.map
+				{
+					position: absolute;
+					top: 4.5em;
+					left: 0;
+					right: 0;
+					bottom: 0;
+
+					background-position: center center;
+					background-size: cover;
+					background-repeat: no-repeat;
+				}
+			}
+
+			&.location > a
+			{
+				position: relative;
+				height: 18em;
+			}
+		}
+	}
+}

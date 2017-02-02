@@ -1,0 +1,113 @@
+<div class="screen" id="screen-search-results">
+
+<nav>
+	<header>
+		<h1 class="search-query"></h1>
+		<h2 class="num-results"></h2>
+	</header>
+
+	<section class="people active">
+		<header>
+			<svg class="icon"><use xlink:href="#icon-account"></use></svg>
+			<span>People <small class="num-people"></small></span>
+			<select>
+				<option>Sort By</option>
+			</select>
+		</header>
+
+		<h5>Status</h5>
+		<label><input type="checkbox"/> Owner</label>
+		<label><input type="checkbox"/> Occupant</label>
+		<label><input type="checkbox"/> Owner/Occupant</label>
+		
+		<h5>Tracked</h5>
+		<label><input type="checkbox"/> Yes</label>
+		<label><input type="checkbox"/> No</label>
+		
+		<h5>Addresses</h5>
+		<label><input type="checkbox"/> 1</label>
+		<label><input type="checkbox"/> 2</label>
+		<label><input type="checkbox"/> 3+</label>
+	</section>
+
+	<section class="locations">
+		<header>
+			<svg class="icon"><use xlink:href="#icon-map-marker"></use></svg>
+			<span>Locations <small class="num-locations"></small></span>
+			<select>
+				<option>Sort By</option>
+			</select>
+		</header>
+	</section>
+	
+	<section class="lenders">
+		<header>
+			<svg class="icon"><use xlink:href="#icon-bank"></use></svg>
+			<span>Lenders <small class="num-lenders"></small></span>
+			<select>
+				<option>Sort By</option>
+			</select>
+		</header>
+		
+		<h5>Avg. Loan Size</h5>
+		<label><input type="checkbox"/> &lt; $49k</label>
+		<label><input type="checkbox"/> $50k - $99k</label>
+		<label><input type="checkbox"/> $100k - $199k</label>
+		<label><input type="checkbox"/> $200k+</label>
+		
+		<h5>Monthly Loan Volume</h5>
+		<label><input type="checkbox"/> 0 - 99</label>
+		<label><input type="checkbox"/> 100 - 299</label>
+		<label><input type="checkbox"/> 300 - 599</label>
+		<label><input type="checkbox"/> 600+</label>
+	</section>
+
+	<section class="campaigns">
+		<header>
+			<svg class="icon"><use xlink:href="#icon-bullhorn"></use></svg>
+			<span>Campaigns <small class="num-campaigns"></small></span>
+			<select>
+				<option>Sort By</option>
+			</select>
+		</header>
+	</section>
+	
+	<section class="agents">
+		<header>
+			<svg class="icon"><use xlink:href="#icon-account-card-details"></use></svg>
+			<span>Agents <small class="num-agents"></small></span>
+			<select>
+				<option>Sort By</option>
+			</select>
+		</header>
+	</section>
+	
+	<section class="offices">
+		<header>
+			<svg class="icon"><use xlink:href="#icon-city"></use></svg>
+			<span>Offices <small class="num-offices"></small></span>
+			<select>
+				<option>Sort By</option>
+			</select>
+		</header>
+	</section>
+</nav>
+
+
+<ul class="results"></ul>
+
+<div class="searching">
+	<h1>Searching...</h1>
+</div>
+
+<div class="no-results">
+	<h1>No matches found.</h1>
+	<p>Try broadening your search or changing the query to something less specific.</p>
+</div>
+
+<div class="error">
+	<h1>There was an error while searching.  Please try again.</h1>
+</div>
+
+
+</div>
